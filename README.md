@@ -1,39 +1,50 @@
 # pyxel-django-challenge
 
-Desafio para programador back-end e front-end.
+Desafio para programador front-end.
 
 ## Como enviar?
 
 - Faça um clone do repositório.
 - Crie uma branch com nome dev-nome-sobrenome.
 - Faça um commit por tarefa.
-- Faça push de tudo.
+- Solicite o invite antes de dar push.
 
-## Case (Sistema já funciona 100%, faltando apenas a estilização)
+## Case
 
 Informações do projeto:
 
-- O sistema é um catálogo de receitas.
-- O sistema possui login e cadastro, que também deve ser estilizado.
-- Nele é possível cadastrar receitas e selecionar destaques através do painel admin.
+- O sistema é um catálogo de receitas onde o admin pode gerenciar adicionar, excluir, editar e favoritar receitas.
+- A plataforma apresenta um sistema simples de login e cadastro de usuários, que podem ser adicionados como autores das receitas.
+
+Rotas: /receitas /admin
 
 Levantamento de requisitos Front-end:
 
-Rotas: GET /receitas, /receitas/:id
+### Obrigatório
 
 - O sistema deve ser responsivo.
-- As receitas em destaque devem ser apresentados em um carousel.
+- Estilizar cada receita em formato de card.
+- A tela de login e registro devem ser estilizados.
+- É necessário um rodapé no sistema com nome do desenvolvedor, sempre colado na parte de baixo da tela.
+- As receitas em destaque devem ser apresentados em um carousel. (Ao estilo netflix, pode usar lib) (Pelo menos tenta XD)
 
-Levantamento de requisitos Back-end: (Em breve)
+### Opcional
+
+- Utilizar Bootstrap 5. (Recomendado caso queira facilitar responsividade e componentes como navbar ou modals)
+- Animações são mais do que bem-vindas, botões, rolagem, o que achar necessário e sem exagero. (@keyframes ou JS, tanto faz)
+- Criar uma landing page na rota "/". (Necessário mexer no back-end)
+
+Caso queira entender melhor o Django, recomendo fazer o [tutorial da documentação]('https://docs.djangoproject.com/en/4.0/intro/tutorial01/').
 
 ## Explicando estrutura de uma aplicação Django:
 
 - views.py -> Funções relacionadas a aplicação Django.
 - urls.py -> Rotas que carregam cada função da view.
-- /templates/nome_da_aplicacao/pages/ -> Possui arquivos HTML que serão renderizados na view.py.
+- models.py -> Modelos de banco de dados.
+- /templates/nome_da_aplicacao/pages/ -> Possui arquivos de páginas HTML.
 - /templates/nome_da_aplicacao/partials/ -> Possui arquivos HTML que representam "partes" de código, estes que podem ser importados pelas pages.
-- /static/ -> Arquivos estáticos como JS e/ou CSS.
-- /ROOT/base_template/ -> Carrega configurações e partials que podem ser usados por mais de uma aplicação, por exemplo, barra de navegação ou a própria estrutura base do HTML.
+- /base_static/ -> Arquivos estáticos como JS e/ou CSS que são usados por mais de uma aplicação.
+- /base_templates/ -> Arquivos HTML que são usados por mais de uma aplicação.
 
 ## Como executar o projeto?
 
@@ -42,15 +53,21 @@ Levantamento de requisitos Back-end: (Em breve)
 ```
 pip install django
 ```
+- Instalar Pillow para reconhecimento de imagem:
+```
+pip install pillow
+```
 - Acessar raiz do projeto e executar:
 ```
-py manage.py migrate
 py manage.py runserver
 ```
 - Acessar localhost:8000.
 
 Obs.:
 
-Credenciais no /admin:
+Para acessar uma porta diferente basta adicionar a porta no final do comando, por exemplo, para rodar na porta 3000:
+```
+py manage.py runserver 3000
+```
 
-user: admin - password: admin.
+Qualquer dúvida pode chamar no zap!
