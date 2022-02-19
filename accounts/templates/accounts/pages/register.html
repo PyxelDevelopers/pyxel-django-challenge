@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+    Criar conta
+{% endblock title %}
+{% block content %}
+    <form action="{% url 'accounts:register' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Nome de usuário</label>
+        <input type="text" name="username">
+        <br>
+        <label for="email">E-mail</label>
+        <input type="text" name="email">
+        <br>
+        <label for="password">Senha</label>
+        <input type="password" name="password">
+        <br>
+        <input type="submit" value="Cadastrar">
+        <a href="{% url 'accounts:login_view' %}">Já tenho conta</a>
+    </form>
+{% endblock content %}

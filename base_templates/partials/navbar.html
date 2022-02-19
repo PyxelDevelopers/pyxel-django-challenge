@@ -1,8 +1,25 @@
 <nav>
     <h1 class="brand">Navbar</h1>
     <ul class="links">
-        <li><a href="#">Home</a></li>
-        <li><a href="{% url 'recipes:recipes' %}">Receitas</a></li>
-        <li><a href="#">Login</a> / <a href="#">Cadastrar</a></li>
+        <li>
+            <a href="{% url 'recipes:recipes' %}">Receitas</a>
+        </li>
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'recipes:recipes_user' request.user.id %}">Minhas receitas</a>
+            </li>
+            <li>
+                Você está logado como {{ request.user }} /
+                <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Deslogar">
+                </form>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'accounts:login_view' %}">Login</a> /
+                <a href="{% url 'accounts:register_view' %}">Cadastrar</a>
+            </li>
+        {% endif %}
     </ul>
 </nav>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock title %}
+{% block content %}
+    <form action="{% url 'accounts:auth' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Nome de usuário</label>
+        <input type="text" name="username">
+        <br>
+        <label for="password">Senha</label>
+        <input type="password" name="password">
+        <input type="submit" value="Login">
+        <a href="{% url 'accounts:register_view' %}">Criar conta</a>
+    </form>
+{% endblock content %}

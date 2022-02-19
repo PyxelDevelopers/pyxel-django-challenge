@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
-{% block title %}Detalhes - {{ recipe.title }}{% endblock title %}
-
+{% block title %}
+    Detalhes - {{ recipe.title }}
+{% endblock title %}
 {% block content %}
-
     {% include 'partials/navbar.html' %}
-
     <h1>Detalhes</h1>
-
     <article>
         <img width="300px" src="{{ recipe.cover.url }}" alt="Capa de receita">
-        <h3><a href="#">{{ recipe.title }}</a></h3>
+        <h3>
+            <a href="#">{{ recipe.title }}</a>
+        </h3>
         <details>
-            <summary>Modo de preparo</summary>
-            <p>{{ recipe.preparation_mode }}</p>
+            <summary>
+                Modo de preparo
+            </summary>
+            <p>
+                {{ recipe.preparation_mode }}
+            </p>
         </details>
-        <p><strong>Tempo de preparo:</strong> {{ recipe.preparation_time }} minutos</p>
-        <p><strong>Categoria:</strong> {{ recipe.category }}</p>
+        <p>
+            <strong>Tempo de preparo:</strong> {{ recipe.preparation_time }} minutos
+        </p>
+        <p>
+            <strong>Categoria:</strong> {{ recipe.category }}
+        </p>
     </article>
-
 {% endblock content %}
