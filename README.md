@@ -9,23 +9,22 @@ Desafio para programador back-end e front-end.
 - Faça um commit por tarefa.
 - Faça push de tudo.
 
-## Case
+## Case (Sistema já funciona 100%, faltando apenas a estilização)
 
 Informações do projeto:
 
-- O sistema deve gerenciar receitas em geral.
-- Cada receita deve conter nome, modo de preparo, ingredientes, imagem.
-- Deve ser possível selecionar receitas para destacar no site.
-- O projeto usa arquitetura MTV. (Explicação da estrutura mais abaixo)
+- O sistema é um catálogo de receitas.
+- O sistema possui login e cadastro, que também deve ser estilizado.
+- Nele é possível cadastrar receitas e selecionar destaques através do painel admin.
 
-Front-end:
+Levantamento de requisitos Front-end:
 
 Rotas: GET /receitas, /receitas/:id
 
 - O sistema deve ser responsivo.
 - As receitas em destaque devem ser apresentados em um carousel.
 
-Back-end: (Em breve)
+Levantamento de requisitos Back-end: (Em breve)
 
 ## Explicando estrutura de uma aplicação Django:
 
