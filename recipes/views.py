@@ -1,28 +1,24 @@
 from django.shortcuts import render
 
 from .models import Recipe
-from .forms import RecipeForm
 
 
 def recipes(request):
-    return render(request, 'recipes/pages/recipe_list.html')
+    context = {
+        'recipes': Recipe.objects.all()
+    }
+    return render(request, 'recipes/pages/recipe_list.html', context)
 
 
 def recipes_detail(request, recipe_id):
-    # TODO Pegar informações de uma receita específica.
-    pass
+    context = {
+        'recipe': Recipe.objects.get(pk=recipe_id)
+    }
+    return render(request, 'recipes/pages/recipe_detail.html', context)
 
 
-def recipes_create(request):
-    # TODO Criar uma nova receita no banco de dados.
-    pass
-
-
-def recipes_update(request):
-    # TODO Atualizar dados de uma receita.
-    pass
-
-
-def recipes_delete(request):
-    # TODO Remover uma receita do banco de dados.
-    pass
+def recipes_category(request, category_id):
+    context = {
+        'recipes': Recipe.objects.filter(category__id=category_id)
+    }
+    return render(request, 'recipes/pages/recipe_list.html', context)

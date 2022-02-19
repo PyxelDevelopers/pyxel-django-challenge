@@ -7,4 +7,17 @@
 
     <h1>Minhas receitas</h1>
 
+    {% for recipe in recipes %}
+        <article>
+            <img width="300px" src="{{ recipe.cover.url }}" alt="Capa de receita">
+            <h3><a href="{% url 'recipes:recipes_detail' recipe.id %}">{{ recipe.title }}</a></h3>
+            <details>
+                <summary>Modo de preparo</summary>
+                <p>{{ recipe.preparation_mode }}</p>
+            </details>
+            <p><strong>Tempo de preparo:</strong> {{ recipe.preparation_time }} minutos</p>
+            <p><strong>Categoria:</strong> <a href="{% url 'recipes:recipes_category' recipe.category.id %}">{{ recipe.category }}</a></p>
+        </article>
+    {% endfor %}
+
 {% endblock content %}
