@@ -13,4 +13,9 @@
         <input type="submit" value="Login">
         <a href="{% url 'accounts:register_view' %}">Criar conta</a>
     </form>
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
 {% endblock content %}

@@ -17,4 +17,11 @@
         <input type="submit" value="Cadastrar">
         <a href="{% url 'accounts:login_view' %}">Já tenho conta</a>
     </form>
+    {% if messages %}
+        {% for message in messages %}
+            <h4 {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+            </h4>
+        {% endfor %}
+    {% endif %}
 {% endblock content %}
