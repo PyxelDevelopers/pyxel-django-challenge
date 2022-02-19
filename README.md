@@ -22,17 +22,10 @@ Front-end:
 
 Rotas: GET /receitas, /receitas/:id
 
-- [ ] O sistema deve apresentar cada receita em um card.
-- [ ] As receitas em destaque, seria interessante colocar em um carousel. (Opcional)
-- [ ] Cliente gosta de animações, mas sem exagero.
-- [ ] Cliente gostaria de uma landing page, falando um pouco sobre seu blog de receitas. (Necessário configurar view, url e template).
+- O sistema deve ser responsivo.
+- As receitas em destaque devem ser apresentados em um carousel.
 
-Back-end:
-
-- [ ] Usar paginação para apresentar as receitas.
-- [ ] Categorizar receitas e criar rota /receitas/categorias para listar categorias e /receitas/categorias/:categoria para apresentar produtos da categoria.
-- [ ] Criar um sistema de cadastro simples e requerir login para acessar blog de receitas.
-- [ ] Criar um CRUD personalizado para cadastrar as receitas. (Pode criar uma tela a parte ou personalizar o admin)
+Back-end: (Em breve)
 
 ## Explicando estrutura de uma aplicação Django:
 
